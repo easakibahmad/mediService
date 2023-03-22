@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../../context/AuthProvider";
 import { toast } from "react-hot-toast";
@@ -11,7 +11,13 @@ const Signup = () => {
     formState: { errors },
   } = useForm();
 
-  const { createUser, updateUser } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const from = location.state?.from?.pathname || "/";
+
+  const { createUser, updateUser, signInWithGooglePopUp } =
+    useContext(AuthContext);
   const [signupError, setSignupError] = useState("");
 
   const handleSignup = (data) => {
@@ -33,6 +39,18 @@ const Signup = () => {
       .catch((error) => {
         console.log(error.message);
         setSignupError(error.message);
+      });
+  };
+
+  const handleSignInWithGoogle = () => {
+    signInWithGooglePopUp()
+      .then((res) => {
+        toast("successfully signed in with google!");
+        console.log(res.user);
+        navigate(from, { replace: true });
+      })
+      .catch((err) => {
+        console.log(err.message);
       });
   };
   return (
@@ -101,10 +119,6 @@ const Signup = () => {
               {errors.password?.message}
             </p>
           )}
-
-          <label className="label">
-            <span className="label-text">Forget password?</span>
-          </label>
         </div>
         <input
           className="btn btn-accent rounded"
@@ -120,7 +134,10 @@ const Signup = () => {
           now!!
         </p>
         <div className="divider">OR</div>
-        <div className="btn btn-accent w-full rounded">
+        <div
+          onClick={handleSignInWithGoogle}
+          className="btn btn-accent w-full rounded"
+        >
           continue with google
         </div>
       </form>

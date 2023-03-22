@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthProvider";
+import { toast } from "react-hot-toast";
 
 const Login = () => {
   const [loginError, setLoginError] = useState("");
@@ -10,7 +11,7 @@ const Login = () => {
 
   const from = location.state?.from?.pathname || "/";
 
-  const { signIn } = useContext(AuthContext);
+  const { signIn, signInWithGooglePopUp } = useContext(AuthContext);
   const {
     register,
     formState: { errors },
@@ -28,6 +29,28 @@ const Login = () => {
       .catch((err) => {
         console.log(err.message);
         setLoginError(err.message);
+      });
+  };
+
+  // const handlePasswordReset = (e) => {
+  //   e.preventDefault();
+  //   const form = e.target;
+  //   const email = form?.email?.value;
+  //   resetPassword(email)
+  //     .then(() => {})
+  //     .catch((err) => console.log(err));
+  // };
+
+  //google pop up sign in method
+  const handleSignInWithGoogle = () => {
+    signInWithGooglePopUp()
+      .then((res) => {
+        toast("successfully signed in with google!");
+        console.log(res.user);
+        navigate(from, { replace: true });
+      })
+      .catch((err) => {
+        console.log(err.message);
       });
   };
 
@@ -76,7 +99,10 @@ const Login = () => {
               {errors.password?.message}
             </p>
           )}
-          <label className="label">
+          <label
+            // onClick={handlePasswordReset}
+            className="label mt-3 cursor-pointer"
+          >
             <span className="label-text">Forget password?</span>
           </label>
         </div>
@@ -91,7 +117,10 @@ const Login = () => {
           first!!
         </p>
         <div className="divider">OR</div>
-        <div className="btn btn-accent w-full rounded">
+        <div
+          onClick={handleSignInWithGoogle}
+          className="btn btn-accent w-full rounded"
+        >
           continue with google
         </div>
       </form>
