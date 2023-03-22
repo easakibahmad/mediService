@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../context/AuthProvider";
 
 const Login = () => {
+  const [loginError, setLoginError] = useState("");
+
+  const { signIn } = useContext(AuthContext);
   const {
     register,
     formState: { errors },
@@ -10,7 +14,14 @@ const Login = () => {
   } = useForm();
 
   const handleLogin = (data) => {
+    setLoginError("");
     console.log(data);
+    signIn(data.email, data.password)
+      .then((res) => console.log(res.user))
+      .catch((err) => {
+        console.log(err.message);
+        setLoginError(err.message);
+      });
   };
 
   return (
@@ -63,6 +74,8 @@ const Login = () => {
           </label>
         </div>
         <input className="btn btn-accent rounded" value="Login" type="submit" />
+        <>{loginError && <p className="text-red-500">{loginError}</p>}</>
+
         <p className="mt-3">
           new to mediService? please{" "}
           <Link className="text-info" to="/signup">

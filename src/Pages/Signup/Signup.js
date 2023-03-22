@@ -11,13 +11,14 @@ const Signup = () => {
   } = useForm();
 
   const { createUser } = useContext(AuthContext);
+
   const handleSignup = (data) => {
     console.log(data);
     createUser(data.email, data.password)
       .then((res) => {
         console.log(res.user);
       })
-      .catch((error) => console.log(error));
+      .catch((error) => console.log(error.message));
   };
   return (
     <div className="m-16 md:w-1/3  w-2/3 mx-auto">
