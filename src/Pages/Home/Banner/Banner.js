@@ -15,7 +15,7 @@ const Banner = () => {
         />
         <div className="md:absolute md:top-1/2 md:left-1/2 md:block grid grid-cols-1 md:my-0 my-6">
           <h1 className="md:text-amber-400 md:mt-0 -mt-5 mb-2 lg:text-4xl md:text-2xl text-xl md:mb-6 font-medium">
-            Your healthcare benefit
+            Healthcare for your lifestyle
           </h1>
           <Link
             to="/login"
