@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import footerImage from "../../../src/assets/images/footer.png";
 import { FiFacebook, FiTwitter } from "react-icons/fi";
 import { CiYoutube } from "react-icons/ci";
+import { GoLocation } from "react-icons/go";
 import duLogo from "../../assets/images/DUlogo.jpeg";
 
 const Footer = () => {
@@ -13,24 +14,30 @@ const Footer = () => {
     >
       <footer className="footer p-10  text-base-content">
         <div>
-          <span className="footer-title">Services</span>
-          <a className="link link-hover">Branding</a>
-          <a className="link link-hover">Design</a>
-          <a className="link link-hover">Marketing</a>
-          <a className="link link-hover">Advertisement</a>
+          <span className="footer-title grid grid-cols-1">Urgent Care</span>
+          <span>Shahid Dr. Mohammad Murtoza Medical Center</span>
+          <span>Dhaka University Sports Ground</span>
+          <span>Dhaka 1000</span>
+          <Link
+            className=" hover:text-blue-500 flex items-center"
+            to="https://www.google.com/maps/place/Shahid+Dr.+Mohammad+Murtoza+Medical+Center/@23.7286869,90.3967359,15z/data=!4m14!1m7!3m6!1s0x3755b8e8ed1c73b9:0x967736d34892cbe7!2sShahid+Dr.+Mohammad+Murtoza+Medical+Center!8m2!3d23.7286869!4d90.3967359!16s%2Fg%2F11hzmp74g8!3m5!1s0x3755b8e8ed1c73b9:0x967736d34892cbe7!8m2!3d23.7286869!4d90.3967359!16s%2Fg%2F11hzmp74g8?hl=en"
+          >
+            <GoLocation></GoLocation> <span className="ml-1">Map</span>
+          </Link>
         </div>
         <div>
-          <span className="footer-title">Company</span>
-          <a className="link link-hover">About us</a>
-          <a className="link link-hover">Contact</a>
-          <a className="link link-hover">Jobs</a>
-          <a className="link link-hover">Press kit</a>
+          <span className="footer-title">Fast Find</span>
+          <Link>About</Link>
+          <Link>About</Link>
+          <Link>About</Link>
+          <Link>About</Link>
         </div>
         <div>
-          <span className="footer-title">Legal</span>
-          <a className="link link-hover">Terms of use</a>
-          <a className="link link-hover">Privacy policy</a>
-          <a className="link link-hover">Cookie policy</a>
+          <span className="footer-title">Fast Find</span>
+          <Link>About Us</Link>
+          <Link>FAQ's</Link>
+          <Link>Contact Us</Link>
+          <Link>Privacy</Link>
         </div>
       </footer>
       <footer className="footer px-10 py-4 border-t  text-base-content border-base-300">
