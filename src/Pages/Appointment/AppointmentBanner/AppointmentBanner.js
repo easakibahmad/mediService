@@ -1,22 +1,28 @@
 import React from "react";
-import chair from "../../../assets/images/chair.png";
 import { DayPicker } from "react-day-picker";
 import { format } from "date-fns";
-import appointment from "../../../assets/images/appointment.png";
+import appointment from "../../../assets/images/duMedical.jpeg";
 
 const AppointmentBanner = ({ selectedDate, setSelectedDate }) => {
   return (
     <header
-      className="m-8 p-8"
+      className=""
       style={{
         background: `url(${appointment})`,
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
       }}
     >
-      <div className="hero ">
-        <div className="hero-content flex-col lg:flex-row-reverse">
-          <img src={chair} className="max-w-sm rounded-lg shadow-2xl" alt="" />
-          <div className="lg:mr-8 sm:mt-8 lg:mt-0">
+      <div className="hero pt-8 pb-4">
+        <div className="hero-content  text-md flex-col lg:flex-row-reverse">
+          <div
+            style={{
+              color: "#184C4f",
+              backgroundColor: "white",
+            }}
+          >
             <DayPicker
+              className=" py-2 px-3 "
               mode="single"
               selected={selectedDate}
               onSelect={setSelectedDate}
@@ -24,9 +30,9 @@ const AppointmentBanner = ({ selectedDate, setSelectedDate }) => {
           </div>
         </div>
       </div>
-      <p className="text-center font-bold md:text-3xl text-xl mt-8">
+      {/* <p className="text-center font-bold md:text-3xl text-xl mt-8">
         Selected date: {format(selectedDate, "PPPP")}
-      </p>
+      </p> */}
     </header>
   );
 };

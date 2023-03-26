@@ -102,7 +102,7 @@ const Navbar = () => {
 
         <div className="navbar-center hidden mt-6 col-span-2 lg:flex">
           <ul
-            className="menu  font-bold  grid grid-cols-5 items-start text-2xl  gap-3   menu-horizontal px-1"
+            className="menu  font-bold  grid grid-cols-6 items-start text-xl  gap-3   menu-horizontal px-1"
             style={{
               color: "#184C4f",
             }}

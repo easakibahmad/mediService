@@ -23,11 +23,16 @@ const AvailableAppointment = ({ selectedDate }) => {
   });
 
   return (
-    <div className="m-16">
-      <p className="font-bold text-center text-purple-700 mb-10">
+    <div className="mt-12  px-16 pb-16 shadow-md">
+      <p
+        className="font-bold lg:text-xl mb-6 text-sm text-center"
+        style={{
+          color: "#184C4f",
+        }}
+      >
         Available appointments on: {format(selectedDate, "PPPP")}
       </p>
-      <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6">
+      <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-8">
         {appointOptions.map((option) => (
           <AppointmentOpt
             setTreatment={setTreatment}
