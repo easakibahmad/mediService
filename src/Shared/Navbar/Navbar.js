@@ -33,10 +33,12 @@ const Navbar = () => {
         Request an Appointment
       </Link>
 
-      <Link className="hover:underline hover:text-blue-500" to="/appointment">
+      <Link to="/login" className="hover:underline hover:text-blue-500">
         Learn About Health Plans
       </Link>
-
+      <Link to="/login" className="hover:underline hover:text-blue-500">
+        About Us
+      </Link>
       {user?.uid ? (
         <>
           <Link className="hover:underline hover:text-blue-500" to="/dashboard">
@@ -88,7 +90,7 @@ const Navbar = () => {
           </div>
           <Link
             to="/"
-            className="flex items-center hover:underline hover:text-blue-500 text-neutral-500	 normal-case lg:text-3xl text-xl"
+            className="flex items-center hover:text-black text-neutral-500	 normal-case lg:text-3xl text-xl"
           >
             <img
               src={duLogo}
@@ -102,7 +104,7 @@ const Navbar = () => {
 
         <div className="navbar-center hidden mt-6 col-span-2 lg:flex">
           <ul
-            className="menu  font-bold  grid grid-cols-6 items-start text-xl  gap-3   menu-horizontal px-1"
+            className="menu font-medium	  grid grid-cols-7 items-start text-xl  gap-6   menu-horizontal px-1"
             style={{
               color: "#184C4f",
             }}
