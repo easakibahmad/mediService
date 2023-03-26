@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../context/AuthProvider";
+import duLogo from "../../assets/images/DUlogo.jpeg";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -9,39 +10,57 @@ const Navbar = () => {
       .then(() => {})
       .catch((err) => console.log(err));
   };
+  const menuTop = (
+    <React.Fragment>
+      <Link
+        className=" hover:text-blue-500 hover:underline rounded uppercase lg:text-3xl text-xl font-bold"
+        to="https://www.du.ac.bd/"
+      >
+        DU
+      </Link>
+    </React.Fragment>
+  );
   const menuItems = (
     <React.Fragment>
-      <li>
-        <Link to="/">Home</Link>
-      </li>
-      <li>
-        <Link to="/appointment">Appointment</Link>
-      </li>
-      <li>
-        <Link to="/">About</Link>
-      </li>
+      <Link className="hover:underline hover:text-blue-500" to="/">
+        Find Patient Services
+      </Link>
+      <Link className="hover:underline hover:text-blue-500" to="/">
+        Find a Provider
+      </Link>
+
+      <Link className="hover:underline hover:text-blue-500" to="/appointment">
+        Request an Appointment
+      </Link>
+
+      <Link className="hover:underline hover:text-blue-500" to="/appointment">
+        Learn About Health Plans
+      </Link>
 
       {user?.uid ? (
         <>
-          <li>
-            <Link to="/dashboard">Dashboard</Link>
-          </li>
-          <li>
-            <Link onClick={handleSignOut} to="/login">
-              Signout
-            </Link>
-          </li>
+          <Link className="hover:underline hover:text-blue-500" to="/dashboard">
+            Dashboard
+          </Link>
+
+          <Link
+            className="hover:underline hover:text-blue-500"
+            onClick={handleSignOut}
+            to="/login"
+          >
+            Signout
+          </Link>
         </>
       ) : (
-        <li>
-          <Link to="/login">Login</Link>
-        </li>
+        <Link to="/login" className="hover:underline hover:text-blue-500">
+          Start Here Now
+        </Link>
       )}
     </React.Fragment>
   );
   return (
-    <div>
-      <div className="navbar flex justify-between">
+    <div className="pt-4 px-12  shadow-md ">
+      <div className="navbar grid grid-cols-2">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -62,15 +81,34 @@ const Navbar = () => {
             </label>
             <ul
               tabIndex={0}
-              className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+              className="menu menu-compact dropdown-content grid grid-cols-1 gap-2 mt-3 px-4 py-3 shadow bg-base-100 rounded w-52"
             >
               {menuItems}
             </ul>
           </div>
-          <Link className="btn btn-ghost normal-case text-xl">MediService</Link>
+          <Link
+            to="/"
+            className="flex items-center hover:underline hover:text-blue-500 text-neutral-500	 normal-case lg:text-3xl text-xl"
+          >
+            <img
+              src={duLogo}
+              className=" rounded-full mr-2 shadow-2xl lg:w-24  lg:h-16 w-10 h-10"
+              alt="duMedical"
+            />
+            MediService
+          </Link>
         </div>
-        <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1">{menuItems}</ul>
+        <div className="flex justify-end text-neutral-500	">{menuTop}</div>
+
+        <div className="navbar-center hidden mt-6 col-span-2 lg:flex">
+          <ul
+            className="menu  font-bold  grid grid-cols-5 items-start text-2xl  gap-3   menu-horizontal px-1"
+            style={{
+              color: "#184C4f",
+            }}
+          >
+            {menuItems}
+          </ul>
         </div>
       </div>
     </div>
