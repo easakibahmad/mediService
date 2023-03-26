@@ -60,25 +60,29 @@ const Signup = () => {
   };
   return (
     <div
-      className="p-16"
+      className="pb-12"
       style={{
         background: `url(${signupBG})`,
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
       }}
     >
-      <div className="md:w-2/3 lg:w-1/3  w-full mx-auto">
-        <h2
-          className="lg:text-2xl text-xl  mb-6 font-medium text-center"
-          style={{
-            color: "#184C4f",
-          }}
-        >
+      <div
+        className="h-8 md:pl-6 pl-2 md:h-20 flex items-center"
+        style={{
+          backgroundColor: "#B1C243",
+        }}
+      >
+        {" "}
+        <h1 className="md:text-4xl text-xl font-medium text-white">
           Signup Now
-        </h2>
+        </h1>
+      </div>
+      <div className="md:h-2 h-1 bg-yellow-600"></div>
+      <div className="md:w-2/3 lg:w-1/3  w-full mx-auto p-4">
         <form
           onSubmit={handleSubmit(handleSignup)}
-          className="grid grid-cols-1 gap-1 bg-white p-2 rounded"
+          className="grid grid-cols-1 gap-1 mt-12 bg-white p-2 rounded"
         >
           <div className="form-control w-full">
             <label className="label">
