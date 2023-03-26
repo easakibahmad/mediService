@@ -55,7 +55,7 @@ const Navbar = () => {
         </>
       ) : (
         <Link to="/login" className="hover:underline hover:text-blue-500">
-          Start Here Now
+          Start Here
         </Link>
       )}
     </React.Fragment>
