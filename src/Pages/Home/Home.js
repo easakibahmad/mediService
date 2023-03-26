@@ -1,5 +1,4 @@
 import React from "react";
-// import AboutService from "./AboutService/AboutService";
 import Banner from "./Banner/Banner";
 import InfoCard from "./InfoCard/InfoCard";
 import News from "./News/News";
