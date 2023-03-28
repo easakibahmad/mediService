@@ -26,7 +26,7 @@ const Navbar = () => {
       <Link className="hover:underline hover:text-blue-500" to="/">
         Find Patient Services
       </Link>
-      <Link className="hover:underline hover:text-blue-500" to="/">
+      <Link to="/providers" className="hover:underline hover:text-blue-500">
         Find a Provider
       </Link>
 
