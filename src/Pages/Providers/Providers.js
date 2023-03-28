@@ -1,7 +1,17 @@
+import { useQuery } from "@tanstack/react-query";
 import React from "react";
 import Doctor from "./Doctor/Doctor";
 
 const Providers = () => {
+  const { data: doctorsData = [] } = useQuery({
+    // added date as query key
+    queryKey: ["doctorsServices"],
+    queryFn: async () => {
+      const res = await fetch(`http://localhost:5000/doctorsDetails`);
+      const data = await res.json();
+      return data;
+    },
+  });
   return (
     <div className="mb-12">
       {" "}
@@ -13,12 +23,9 @@ const Providers = () => {
       </div>
       <div className="md:h-2 h-1 bg-teal-400"></div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-12 gap-10 pt-8 px-12">
-        <Doctor></Doctor>
-        <Doctor></Doctor>
-        <Doctor></Doctor>
-        <Doctor></Doctor>
-        <Doctor></Doctor>
-        <Doctor></Doctor>
+        {doctorsData.map((option) => (
+          <Doctor key={option._id} option={option}></Doctor>
+        ))}
       </div>
     </div>
   );
