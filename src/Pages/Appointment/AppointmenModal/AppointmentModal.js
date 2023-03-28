@@ -46,6 +46,8 @@ const AppointmentModal = ({
           setTreatment(null);
           toast.success("Booking successfully confirmed");
           refetch();
+        } else {
+          toast.error(data.message);
         }
       });
   };
