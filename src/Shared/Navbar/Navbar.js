@@ -23,7 +23,7 @@ const Navbar = () => {
   );
   const menuItems = (
     <React.Fragment>
-      <Link className="hover:underline hover:text-blue-500" to="/">
+      <Link className="hover:underline hover:text-blue-500" to="/services">
         Find Patient Services
       </Link>
       <Link to="/providers" className="hover:underline hover:text-blue-500">
