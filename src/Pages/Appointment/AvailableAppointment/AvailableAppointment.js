@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import AppointmentOpt from "../AppointmentOpt/AppointmentOpt";
 import AppointmentModal from "../AppointmenModal/AppointmentModal";
 import { useQuery } from "@tanstack/react-query";
+import Loading from "../../../Shared/Loading/Loading";
 
 const AvailableAppointment = ({ selectedDate }) => {
   const [treatment, setTreatment] = useState(null);
@@ -10,7 +11,11 @@ const AvailableAppointment = ({ selectedDate }) => {
   // for date wise data loading
   const date = format(selectedDate, "PP");
 
-  const { data: appointOptions = [] } = useQuery({
+  const {
+    data: appointOptions = [],
+    refetch,
+    isLoading,
+  } = useQuery({
     // added date as query key
     queryKey: ["doctorsServices", date],
     queryFn: async () => {
@@ -22,6 +27,9 @@ const AvailableAppointment = ({ selectedDate }) => {
     },
   });
 
+  if (isLoading) {
+    return <Loading></Loading>;
+  }
   return (
     <div className="mt-12  px-16 pb-16 shadow-md">
       <p
@@ -45,6 +53,7 @@ const AvailableAppointment = ({ selectedDate }) => {
         <AppointmentModal
           selectedDate={selectedDate}
           treatment={treatment}
+          refetch={refetch}
           setTreatment={setTreatment}
         ></AppointmentModal>
       )}

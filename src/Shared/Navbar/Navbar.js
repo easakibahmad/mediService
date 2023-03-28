@@ -34,10 +34,10 @@ const Navbar = () => {
         Request an Appointment
       </Link>
 
-      <Link to="/login" className="hover:underline hover:text-blue-500">
+      <Link to="/helthplans" className="hover:underline hover:text-blue-500">
         Learn About Health Plans
       </Link>
-      <Link to="/login" className="hover:underline hover:text-blue-500">
+      <Link to="/about" className="hover:underline hover:text-blue-500">
         About Us
       </Link>
       {user?.uid ? (

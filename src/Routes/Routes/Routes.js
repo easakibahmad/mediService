@@ -8,6 +8,8 @@ import Dashboard from "../../dashboard/Dashboard";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import Providers from "../../Pages/Providers/Providers";
 import Services from "../../Pages/Services/Services";
+import HealthPlans from "../../Pages/HelthPlans/HealthPlans";
+import About from "../../Pages/About/About";
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -27,7 +29,11 @@ export const router = createBrowserRouter([
       },
       {
         path: "/appointment",
-        element: <Appointment></Appointment>,
+        element: (
+          <PrivateRoute>
+            <Appointment></Appointment>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/providers",
@@ -36,6 +42,14 @@ export const router = createBrowserRouter([
       {
         path: "/services",
         element: <Services></Services>,
+      },
+      {
+        path: "/helthplans",
+        element: <HealthPlans></HealthPlans>,
+      },
+      {
+        path: "/about",
+        element: <About></About>,
       },
     ],
   },
