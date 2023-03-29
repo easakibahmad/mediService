@@ -22,7 +22,7 @@ const Providers = () => {
         </h1>
       </div>
       <div className="md:h-2 h-1 bg-teal-400"></div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-12 gap-10 pt-8 px-12">
+      <div className="grid grid-cols-1 lg:grid-cols-2  md:gap-12 gap-10 pt-8 px-12">
         {doctorsData.map((option) => (
           <Doctor key={option._id} option={option}></Doctor>
         ))}
