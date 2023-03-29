@@ -1,6 +1,7 @@
 [
     {
-      "name": "Teeth Orthodontics",
+      "pictureUrl":"https://i.ibb.co/pP6Hc4X/general-medicine.jpg",
+      "name": "General Medicine",
       "slots": [
         "08.00 AM - 08.30 AM",
         "08.30 AM - 09.00 AM",
@@ -8,44 +9,117 @@
         "09.30 AM - 10.00 AM",
         "10.00 AM - 10.30 AM",
         "10.30 AM - 11.00 AM"
+      ],
+      "doctors": [
+        "Nora Christian",
+        "Guzman Gibson",
+        "Carver Harris",
+        "Carey Owens"
       ]
     },
     {
-      "name": "Cosmetic Dentistry",
+      "pictureUrl":"https://i.ibb.co/4prhK4K/diet.jpg",
+      "name": "Diet Plan",
       "slots": [
         "09.00 AM - 9.30 AM",
         "09.30 AM - 10.00 AM",
         "10.00 AM - 10.30 AM",
         "10.30 AM - 11.00 AM"
+      ],
+      "doctors": [
+        "Nora Christian",
+        "Guzman Gibson",
+        "Carver Harris",
+        "Carey Owens"
       ]
     },
     {
-      "name": "Teeth Cleaning",
-      "slots": []
-    },
-    {
-      "name": "Cavity Protection",
-      "slots": [
-        "10.00 AM - 10.30 AM",
-        "10.30 AM - 11.00 AM"
+      "pictureUrl":"https://i.ibb.co/dBstrDn/psychiatry.jpg",
+      "name": "Psychiatry",
+      "slots": [],
+      "doctors": [
+        "Nora Christian",
+        "Guzman Gibson",
+        "Carver Harris",
+        "Carey Owens"
       ]
     },
+    
     {
-      "name": "Pediatric Dental",
+      "pictureUrl":"https://i.ibb.co/cYcGJbm/eye.jpg",
+      "name": "Eye Care",
       "slots": [
         "08.30 AM - 09.00 AM",
         "09.00 AM - 9.30 AM",
         "09.30 AM - 10.00 AM",
         "10.00 AM - 10.30 AM",
         "10.30 AM - 11.00 AM"
+      ],
+      "doctors": [
+        "Nora Christian",
+        "Guzman Gibson",
+        "Carver Harris",
+        "Carey Owens"
       ]
     },
     {
-      "name": "Oral Surgery",
+      "pictureUrl":"https://i.ibb.co/FXPwTmB/cardiac.jpg",
+      "name": "Cardiology",
       "slots": [
         "09.30 AM - 10.00 AM",
         "10.00 AM - 10.30 AM",
         "10.30 AM - 11.00 AM"
+      ],
+      "doctors": [
+        "Nora Christian",
+        "Guzman Gibson",
+        "Carver Harris",
+        "Carey Owens"
+      ]
+    },
+    {
+      "pictureUrl":"https://i.ibb.co/YLfkWkp/radiology.jpg",
+      "name": "Radiology",
+      "slots": [
+        "09.30 AM - 10.00 AM",
+        "10.00 AM - 10.30 AM",
+        "10.30 AM - 11.00 AM",
+        "02.30 PM - 03.00 PM"
+      ],
+      "doctors": [
+        "Nora Christian",
+        "Guzman Gibson",
+        "Carver Harris",
+        "Carey Owens"
+      ]
+    },
+    {
+      "pictureUrl":"https://i.ibb.co/jbZVFPd/dental.jpg",
+      "name": "General Dentistry",
+      "slots": [
+        "09.30 AM - 10.00 AM",
+        "10.00 AM - 10.30 AM",
+        "10.30 AM - 11.00 AM"
+      ],
+      "doctors": [
+        "Nora Christian",
+        "Guzman Gibson",
+        "Carver Harris",
+        "Carey Owens"
+      ]
+    },
+    {
+      "pictureUrl":"https://i.ibb.co/Fzrhcg2/physio.jpg",
+      "name": "Physiology",
+      "slots": [
+        "10.00 AM - 10.30 AM",
+        "10.30 AM - 11.00 AM"
+      ],
+      "doctors": [
+        "Nora Christian",
+        "Guzman Gibson",
+        "Carver Harris",
+        "Carey Owens"
       ]
     }
   ]

@@ -1,0 +1,9 @@
+.divHover {}
+
+.menuItem:hover {
+    color: blue;
+}
+
+.menuItem:hover .divHover {
+    background-color: black;
+}

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../context/AuthProvider";
 import duLogo from "../../assets/images/DUlogo.jpeg";
 import { GiHamburgerMenu } from "react-icons/gi";
+import "../Navbar/Navbar.css";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -23,40 +24,44 @@ const Navbar = () => {
   );
   const menuItems = (
     <React.Fragment>
-      <Link className="hover:underline hover:text-blue-500" to="/services">
-        Find Patient Services
+      <Link className="grid grid-cols-1 menuItem" to="/services">
+        <div>Find Patient Services</div>
+        <div className="h-2 divHover"></div>
       </Link>
-      <Link to="/providers" className="hover:underline hover:text-blue-500">
-        Find a Provider
-      </Link>
-
-      <Link className="hover:underline hover:text-blue-500" to="/appointment">
-        Request an Appointment
+      <Link to="/providers" className="menuItem">
+        <div>Find a Provider</div>
+        <div className="h-2 divHover"></div>
       </Link>
 
-      <Link to="/helthplans" className="hover:underline hover:text-blue-500">
-        Learn About Health Plans
+      <Link className="menuItem" to="/appointment">
+        <div>Request an Appointment</div>
+        <div className="h-2 divHover"></div>
       </Link>
-      <Link to="/about" className="hover:underline hover:text-blue-500">
-        About Us
+
+      <Link to="/helthplans" className="menuItem">
+        <div>Learn About Health Plans</div>
+        <div className="h-2 divHover"></div>
+      </Link>
+      <Link to="/about" className="menuItem">
+        <div>About Us</div>
+        <div className="h-2 divHover"></div>
       </Link>
       {user?.uid ? (
         <>
-          <Link className="hover:underline hover:text-blue-500" to="/dashboard">
-            Dashboard
+          <Link className="menuItem" to="/dashboard">
+            <div>Dashboard</div>
+            <div className="h-2 divHover"></div>
           </Link>
 
-          <Link
-            className="hover:underline hover:text-blue-500"
-            onClick={handleSignOut}
-            to="/login"
-          >
-            Signout
+          <Link className="menuItem" onClick={handleSignOut} to="/login">
+            <div>Signout</div>
+            <div className="h-2 divHover"></div>
           </Link>
         </>
       ) : (
-        <Link to="/login" className="hover:underline hover:text-blue-500">
-          Start Here
+        <Link to="/login" className="menuItem">
+          <div>Start Here</div>
+          <div className="h-2 divHover"></div>
         </Link>
       )}
     </React.Fragment>

@@ -1,9 +1,10 @@
 import { useQuery } from "@tanstack/react-query";
 import React from "react";
 import Doctor from "./Doctor/Doctor";
+import Loading from "../../Shared/Loading/Loading";
 
 const Providers = () => {
-  const { data: doctorsData = [] } = useQuery({
+  const { data: doctorsData = [], isLoading } = useQuery({
     // added date as query key
     queryKey: ["doctorsServices"],
     queryFn: async () => {
@@ -12,13 +13,17 @@ const Providers = () => {
       return data;
     },
   });
+
+  if (isLoading) {
+    return <Loading></Loading>;
+  }
   return (
     <div className="mb-12">
       {" "}
       <div className="h-8 md:pl-6 pl-2 md:h-20 flex items-center bg-black">
         {" "}
         <h1 className="md:text-4xl text-xl font-medium text-white">
-          Doctors in Services
+          Doctors in Service
         </h1>
       </div>
       <div className="md:h-2 h-1 bg-teal-400"></div>

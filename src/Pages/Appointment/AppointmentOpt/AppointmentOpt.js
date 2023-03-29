@@ -9,7 +9,7 @@ const AppointmentOpt = ({ option, setTreatment }) => {
         <h2 className="card-title">{name}</h2>
         <p>{slots.length > 0 ? slots[0] : "try later"}</p>
         <p>
-          {slots.length} {slots.length > 1 ? "spaces" : "space"} available
+          {slots.length} {slots.length > 1 ? "slots" : "slot"} available
         </p>
       </div>
       <div className="">

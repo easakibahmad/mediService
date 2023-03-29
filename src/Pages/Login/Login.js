@@ -48,7 +48,7 @@ const Login = () => {
   const handleSignInWithGoogle = () => {
     signInWithGooglePopUp()
       .then((res) => {
-        toast("successfully signed in with google!");
+        toast.success("successfully signed in with google!");
         console.log(res.user);
         navigate(from, { replace: true });
       })
