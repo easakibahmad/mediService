@@ -9,7 +9,7 @@ const AppointmentModal = ({
   selectedDate,
   refetch,
 }) => {
-  const { name, slots } = treatment;
+  const { name, slots, doctors } = treatment;
   const date = format(selectedDate, "PP");
 
   const { user } = useContext(AuthContext);
@@ -18,6 +18,7 @@ const AppointmentModal = ({
     e.preventDefault();
     const form = e.target;
     const slot = form.slot.value;
+    const doctor = form.doctor.value;
     const nameOfPatient = form.name.value;
     const email = form.email.value;
     const phone = form.phone.value;
@@ -27,6 +28,7 @@ const AppointmentModal = ({
       treatment: name,
       patient: nameOfPatient,
       slot,
+      doctor,
       email,
       phone,
     };
@@ -75,6 +77,13 @@ const AppointmentModal = ({
               {slots.map((slot, i) => (
                 <option key={i} value={slot}>
                   {slot}
+                </option>
+              ))}
+            </select>
+            <select name="doctor" className="select select-bordered w-full ">
+              {doctors.map((opt, i) => (
+                <option key={i} value={opt}>
+                  {opt}
                 </option>
               ))}
             </select>
