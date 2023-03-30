@@ -28,6 +28,7 @@ const AppointmentBanner = ({ selectedDate, setSelectedDate }) => {
             }}
           >
             <DayPicker
+              disabled={{ before: new Date() }}
               className=" py-1 px-3 "
               mode="single"
               selected={selectedDate}

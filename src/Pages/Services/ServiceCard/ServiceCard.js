@@ -10,9 +10,9 @@ const ServiceCard = ({ option }) => {
         <img src={pictureUrl} alt="doctor" className="md:h-64 h-52 w-full" />
       </div>
       <div className="grid grid-cols-1 gap-1">
-        <div className="md:pl-4">
+        <div className="md:pl-4 pl-4">
           <p className="text-xl font-medium">{name}</p>
-          <p className="text-sm font-medium">
+          <p className="text-sm ">
             {slots?.length} {slots?.length > 1 ? "slots" : "slot"} available
           </p>
         </div>
