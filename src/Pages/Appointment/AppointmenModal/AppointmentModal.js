@@ -11,6 +11,7 @@ const AppointmentModal = ({
 }) => {
   const { name, slots, doctors } = treatment;
   const date = format(selectedDate, "PP");
+  // console.log(date);
 
   const { user } = useContext(AuthContext);
 

@@ -1,10 +1,12 @@
 import React from "react";
 import { DayPicker } from "react-day-picker";
-import { format } from "date-fns";
+// import { format } from "date-fns";
 import appointment from "../../../assets/images/duMedical.jpeg";
 import medicalTeam from "../../../assets/images/doctorsServices.png";
 
 const AppointmentBanner = ({ selectedDate, setSelectedDate }) => {
+  // const date = format(selectedDate, "PP");
+
   return (
     <header
       className=""
@@ -28,7 +30,6 @@ const AppointmentBanner = ({ selectedDate, setSelectedDate }) => {
             }}
           >
             <DayPicker
-              disabled={{ before: new Date() }}
               className=" py-1 px-3 "
               mode="single"
               selected={selectedDate}
