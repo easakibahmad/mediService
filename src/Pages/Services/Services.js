@@ -8,7 +8,9 @@ const Services = () => {
     // added date as query key
     queryKey: ["doctorsServices"],
     queryFn: async () => {
-      const res = await fetch(`http://localhost:5000/doctorsServices`);
+      const res = await fetch(
+        `https://medi-service-server-site.vercel.app/doctorsServices`
+      );
       const data = await res.json();
       return data;
     },
