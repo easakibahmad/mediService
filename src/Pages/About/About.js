@@ -6,19 +6,23 @@ import Message from "./Message";
 
 const About = () => {
   return (
-    <div className="md:mt-2 mt-8" style={{ "font-family": "Roboto" }}>
-      <div className="grid md:grid-cols-2">
-        <AboutHeading></AboutHeading>
-        <div className="my-auto">
-          <Aims></Aims>
+    <div style={{ "font-family": "Roboto" }}>
+      <div className="h-6 " style={{ backgroundColor: "#40E0D0" }}></div>
+      <div className="h-1 bg-black"></div>
+      <div className="md:mt-2">
+        <div className="grid md:grid-cols-2">
+          <AboutHeading></AboutHeading>
+          <div className="my-auto">
+            <Aims></Aims>
+          </div>
         </div>
-      </div>
-      <div className="my-auto">
-        <Confidentiality></Confidentiality>
-      </div>
-      <div className="flex justify-center">
-        <div className="md:w-2/3">
-          <Message></Message>
+        <div className="my-auto">
+          <Confidentiality></Confidentiality>
+        </div>
+        <div className="flex justify-center">
+          <div className="md:w-2/3">
+            <Message></Message>
+          </div>
         </div>
       </div>
     </div>

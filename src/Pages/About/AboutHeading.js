@@ -2,7 +2,7 @@ import React from "react";
 
 const AboutHeading = () => {
   return (
-    <div className="md:m-12 mx-3 my-6 shadow-xl md:p-4 p-2">
+    <div className="md:mx-12 mx-3 my-6 shadow-xl md:p-4 p-2">
       <h1 className="md:text-2xl  font-bold mb-1">About Us</h1>
       <p>
         University of Dhaka (DU) Medical Center strives to provide the primary
