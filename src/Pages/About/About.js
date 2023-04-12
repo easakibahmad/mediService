@@ -6,7 +6,7 @@ import Message from "./Message";
 
 const About = () => {
   return (
-    <div style={{ "font-family": "Roboto" }}>
+    <div>
       <div className="h-6 " style={{ backgroundColor: "#40E0D0" }}></div>
       <div className="h-1 bg-black"></div>
       <div className="md:mt-2">

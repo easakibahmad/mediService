@@ -39,7 +39,7 @@ const Footer = () => {
 
         <div>
           <span className="footer-title">Fast Find</span>
-          <Link>About Us</Link>
+          <Link to="/about">About Us</Link>
           <Link>FAQ's</Link>
           <Link>Contact Us</Link>
           <Link>Privacy</Link>
