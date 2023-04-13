@@ -1,7 +1,7 @@
 import React from "react";
 import { DayPicker } from "react-day-picker";
 // import { format } from "date-fns";
-import appointment from "../../../assets/images/duMedical.jpeg";
+import health from "../../../assets/images/health.jpg";
 import medicalTeam from "../../../assets/images/doctorsServices.png";
 
 const AppointmentBanner = ({ selectedDate, setSelectedDate }) => {
@@ -11,7 +11,7 @@ const AppointmentBanner = ({ selectedDate, setSelectedDate }) => {
     <header
       className=""
       style={{
-        background: `url(${appointment})`,
+        background: `url(${health})`,
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
       }}
