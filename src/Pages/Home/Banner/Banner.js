@@ -10,12 +10,10 @@ const Banner = () => {
           className="w-full md:h-96 h-48"
           src={duMedical}
           alt="health-care"
+          style={{ filter: "brightness(40%)" }}
         />
         <div className="md:absolute md:top-1/2 md:left-1/2 md:block grid grid-cols-1 md:my-0 my-6">
-          <h1
-            className=" md:mt-0 -mt-5 mb-2 lg:text-4xl md:text-2xl text-xl md:mb-6 font-bold"
-            style={{ color: "#E040B2" }}
-          >
+          <h1 className="text-white md:mt-0 -mt-5 mb-2 lg:text-4xl md:text-2xl text-xl md:mb-6 font-medium">
             Healthcare for your lifestyle
           </h1>
           <Link

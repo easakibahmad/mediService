@@ -21,14 +21,24 @@ const Providers = () => {
   }
   return (
     <div className="mb-12">
-      {" "}
-      <div className="h-8 md:pl-6 pl-2 md:h-20 flex items-center bg-black">
+      <div
+        className="h-8 md:pl-6 pl-2 md:h-12 flex items-center"
+        style={{
+          backgroundColor: "#481D1A",
+        }}
+      >
+        {" "}
+        <h1 className="md:text-2xl text-xl font-bold text-white">
+          Doctors in Service
+        </h1>{" "}
+      </div>
+      {/* <div className="h-8 md:pl-6 pl-2 md:h-20 flex items-center bg-black">
         {" "}
         <h1 className="md:text-4xl text-xl font-medium text-white">
           Doctors in Service
         </h1>
       </div>
-      <div className="md:h-2 h-1 bg-teal-400"></div>
+      <div className="md:h-2 h-1 bg-teal-400"></div> */}
       <div className="grid grid-cols-1 lg:grid-cols-2  md:gap-12 gap-10 pt-8 px-12">
         {doctorsData.map((option) => (
           <Doctor key={option._id} option={option}></Doctor>

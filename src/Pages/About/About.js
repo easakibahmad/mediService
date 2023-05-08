@@ -7,8 +7,8 @@ import Message from "./Message";
 const About = () => {
   return (
     <div>
-      <div className="h-6 " style={{ backgroundColor: "#40E0D0" }}></div>
-      <div className="h-1 bg-black"></div>
+      {/* <div className="h-6 " style={{ backgroundColor: "#40E0D0" }}></div> */}
+      {/* <div className="h-1 bg-black"></div> */}
       <div className="md:mt-2">
         <div className="grid md:grid-cols-2">
           <AboutHeading></AboutHeading>

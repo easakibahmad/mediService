@@ -13,8 +13,6 @@ import InfoCardTwo from "./InfoCardTwo/InfoCardTwo";
 const Home = () => {
   return (
     <div>
-      <div className="md:h-14 h-8 bg-green-800"></div>
-      <div className="md:h-2 h-1 bg-blue-900"></div>
       <Banner></Banner>
       <div className="grid lg:grid-cols-6  md:grid-cols-4 grid-cols-1">
         <div className="md:col-span-3 lg:col-span-4 shadow-xl">

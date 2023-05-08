@@ -48,11 +48,6 @@ const Navbar = () => {
       </Link>
       {user?.uid ? (
         <>
-          <Link className="menuItem" to="/dashboard">
-            <div>Dashboard</div>
-            <div className="h-2 divHover"></div>
-          </Link>
-
           <Link className="menuItem" onClick={handleSignOut} to="/login">
             <div>Signout</div>
             <div className="h-2 divHover"></div>
@@ -87,7 +82,7 @@ const Navbar = () => {
           >
             <img
               src={duLogo}
-              className=" rounded-full mr-2 shadow-2xl lg:w-24  lg:h-16 w-10 h-10"
+              className=" rounded-full mr-2 shadow-2xl lg:w-24  lg:h-20 w-10 h-10"
               alt="duMedical"
             />
             MediService

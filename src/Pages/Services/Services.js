@@ -20,10 +20,17 @@ const Services = () => {
   }
   return (
     <div className="">
-      <div className="md:h-12 h-6 pl-8 grid items-center md:text-2xl text-md font-medium bg-black text-white">
-        Available Services
+      <div
+        className="h-8 md:pl-6 pl-2 md:h-12 flex items-center"
+        style={{
+          backgroundColor: "#481D1A",
+        }}
+      >
+        {" "}
+        <h1 className="md:text-2xl text-xl font-bold text-white">
+          Available Services
+        </h1>{" "}
       </div>
-      <div className="h-1 bg-green-400"></div>
       <div className=" grid md:grid-cols-2 grid-cols-1 my-12 gap-10 px-20">
         {appointOptions.map((option) => (
           <ServiceCard key={option._id} option={option}></ServiceCard>

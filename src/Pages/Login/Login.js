@@ -67,17 +67,16 @@ const Login = () => {
       }}
     >
       <div
-        className="h-8 md:pl-6 pl-2 md:h-20 flex items-center"
+        className="h-8 md:pl-6 pl-2 md:h-12 flex items-center"
         style={{
-          backgroundColor: "#EC715A",
+          backgroundColor: "#481D1A",
         }}
       >
         {" "}
-        <h1 className="md:text-4xl text-xl font-medium text-white">
-          Login Now
-        </h1>
+        <h1 className="md:text-2xl text-xl font-bold text-white">
+          Log In
+        </h1>{" "}
       </div>
-      <div className="md:h-2 h-1 bg-red-600"></div>
       <div className=" md:w-2/3 lg:w-1/3  w-full mx-auto mt-8 p-4">
         <form
           onSubmit={handleSubmit(handleLogin)}

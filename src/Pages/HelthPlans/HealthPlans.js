@@ -10,9 +10,9 @@ import pdf4 from "../../assets/pdfs/StudentGOPForm.pdf";
 const HealthPlans = () => {
   return (
     <div>
-      <div className="h-6 " style={{ backgroundColor: "#8E40E0" }}></div>
-      <div className="h-1 " style={{ backgroundColor: "#E040B2" }}></div>
-      <div className=" md:mx-16 mx-4 shadow-xl grid md:grid-cols-5 grid-cols-1 gap-5">
+      {/* <div className="h-6 " style={{ backgroundColor: "#8E40E0" }}></div>
+      <div className="h-1 " style={{ backgroundColor: "#E040B2" }}></div> */}
+      <div className="md:mt-6 md:mx-16 mx-4 shadow-xl grid md:grid-cols-5 grid-cols-1 gap-5">
         <div className="col-span-4 px-8">
           <AboutPlan></AboutPlan>
           <PlanTwo></PlanTwo>
