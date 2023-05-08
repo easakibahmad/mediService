@@ -27,7 +27,8 @@ const Login = () => {
     signIn(data.email, data.password)
       .then((res) => {
         console.log(res.user);
-        navigate(from, { replace: true });
+        // navigate(from, { replace: true });
+        navigate("/");
       })
       .catch((err) => {
         console.log(err.message);
