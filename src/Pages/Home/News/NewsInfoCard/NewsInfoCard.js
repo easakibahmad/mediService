@@ -1,19 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const NewsInfoCard = () => {
+const NewsInfoCard = ({ item }) => {
+  const { date, heading, _id, description } = item;
   return (
     <div className="grid grid-cols-1 gap-2">
-      <p className="text-sm lowercase">SEPTEMBER 7, 2022</p>
-      <Link className="font-medium hover:text-indigo-500 text-fuchsia-500">
-        Updated COVID-19 booster vaccines are here. Here’s what you need to
-        know.
+      <p className="text-sm lowercase">{date}</p>
+      <Link
+        to={`/news/${_id}`}
+        className="font-medium hover:text-indigo-500 text-fuchsia-500"
+      >
+        {heading}
       </Link>
-      <p className="text-sm">
-        On September 1, the Centers for Disease Control (CDC) recommended the
-        newly updated COVID-19 booster vaccines. Here are some frequently asked
-        questions about the vaccines, eligibility, and more.
-      </p>
+      <p className="text-sm">{description.slice(0, 160)}...</p>
       <hr />
     </div>
   );

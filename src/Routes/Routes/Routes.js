@@ -9,6 +9,8 @@ import Providers from "../../Pages/Providers/Providers";
 import Services from "../../Pages/Services/Services";
 import HealthPlans from "../../Pages/HelthPlans/HealthPlans";
 import About from "../../Pages/About/About";
+import NewsDetail from "../../Pages/Home/Details/NewsDetail";
+import InfoDetail from "../../Pages/Home/Details/InfoDetail";
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -49,6 +51,22 @@ export const router = createBrowserRouter([
       {
         path: "/about",
         element: <About></About>,
+      },
+      {
+        path: "/news/:id",
+        element: <NewsDetail></NewsDetail>,
+        loader: ({ params }) =>
+          fetch(
+            `https://medi-service-server-site-easakibahmad.vercel.app/news/${params.id}`
+          ),
+      },
+      {
+        path: "/info/:id",
+        element: <InfoDetail></InfoDetail>,
+        loader: ({ params }) =>
+          fetch(
+            `https://medi-service-server-site-easakibahmad.vercel.app/info/${params.id}`
+          ),
       },
     ],
   },

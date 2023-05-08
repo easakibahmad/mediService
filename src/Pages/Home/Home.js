@@ -3,14 +3,27 @@ import Banner from "./Banner/Banner";
 import InfoCard from "./InfoCard/InfoCard";
 import News from "./News/News";
 import NewsCard from "./NewsCard/NewsCard";
-// import InfoCards from "./InfoCards/InfoCards";
-// import Services from "./Services/Services";
-// import MainAppointment from "./Services/MainAppointment/MainAppointment";
-// import Testimonial from "./Testimonial/Testimonial";
 import UrgentCare from "./UrgentCare/UrgentCare";
 import InfoCardTwo from "./InfoCardTwo/InfoCardTwo";
+import Loading from "../../Shared/Loading/Loading";
+import { useQuery } from "@tanstack/react-query";
 
 const Home = () => {
+  const { data: infoData = [], isLoading } = useQuery({
+    // added date as query key
+    queryKey: ["info"],
+    queryFn: async () => {
+      const res = await fetch(
+        `https://medi-service-server-site-easakibahmad.vercel.app/info`
+      );
+      const data = await res.json();
+      return data;
+    },
+  });
+
+  if (isLoading) {
+    return <Loading></Loading>;
+  }
   return (
     <div>
       <Banner></Banner>
@@ -20,10 +33,9 @@ const Home = () => {
             <UrgentCare></UrgentCare>
           </div>
           <div className="md:grid-cols-2 m-8 grid grid-cols-1 gap-12">
-            <NewsCard></NewsCard>
-            <NewsCard></NewsCard>
-            <NewsCard></NewsCard>
-            <NewsCard></NewsCard>
+            {infoData.map((item) => (
+              <NewsCard key={item._id} item={item}></NewsCard>
+            ))}
           </div>
           <div className="grid md:grid-cols-2 grid-cols-1 mx-4">
             <InfoCard></InfoCard>
